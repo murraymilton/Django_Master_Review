@@ -1,0 +1,17 @@
+{% extends "book_outlet/base.html" %}
+
+
+
+{% block title %}
+Must Read Book List 2024
+{% endblock %}
+
+
+{% block content %}
+<h1>Our Must Read List</h1>
+<ul>
+    {% for book in books %}
+    <li><a href="{{ book.get_absolute_url }}">{{ book.title| title }}</a> (Ratiing: {{ book.rating }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}
