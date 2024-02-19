@@ -21,9 +21,9 @@ class Book(models.Model):
         return reverse("book_details", args=[self.slug])
 
 # Will override the save method and use the title model to dynamically change each URL local.../book-life-1
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     self.slug = slugify(self.title)
+    #     super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.title} ({self.rating})"
